@@ -1,5 +1,6 @@
 from uuid import UUID
 import logging
+from pydantic import UUID4
 
 from fastapi import APIRouter, Depends, HTTPException, File, Form, UploadFile
 from fastapi.encoders import jsonable_encoder
@@ -18,17 +19,14 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/v1/audio", tags=["movies"])
 
     
-@router.post("/upload", response_model=DiarizationResponse)
+@router.post("/upload")
 async def stream_diarize_audio(
     audio_file: UploadFile = File(...),
-    session_id: UUID = Form(...),
+    session_id: UUID4 = Form(...),
     sequence_number: int = Form(...),
-    is_final: bool = Form(False),
+    is_final: bool = Form(...),
     service: StreamingDiarizationService = Depends(get_diarization_service)
-) -> DiarizationResponse:
-    """
-    Endpoint to process streaming audio chunks and perform speaker diarization.
-    """
+):
     try:
         return await service.process_audio_chunk(
             audio_file.file,
