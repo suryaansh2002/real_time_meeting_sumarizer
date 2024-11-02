@@ -35,6 +35,6 @@ def get_knowledge_graph_service() -> KnowledgeGraphService:
 def get_summerization_service(
     config: Settings = Depends(settings_instance),
     kb: KnowledgeGraphService = Depends(get_knowledge_graph_service)
-) -> StreamingDiarizationService:
+) -> SummarizationService:
     """Get diarization service instance."""
     return SummarizationService(config, kb)
