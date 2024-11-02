@@ -19,3 +19,12 @@ class DiarizationResponse(BaseModel):
     duration: float
     created_at: datetime
     is_complete: bool
+    
+    
+class SummerizationResponse(BaseModel):
+    session_id: UUID
+    summary: str
+    duration: float
+    created_at: datetime
+    is_complete: bool
+    
