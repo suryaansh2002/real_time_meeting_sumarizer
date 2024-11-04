@@ -1,5 +1,5 @@
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 from app.services.knowledge_graph import KnowledgeGraphService
 from app.settings.meetings import Settings
@@ -10,9 +10,9 @@ class SummarizationService:
     """Service handling streaming audio summerization logic."""
     
     def __init__(self, config: Settings, kb: KnowledgeGraphService) -> None:
-        bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
+        # bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
 
-        model = AutoModelForCausalLM.from_pretrained(config.sm_model_name, quantization_config=bnb_config, low_cpu_mem_usage=True, pad_token_id=0)
+        model = AutoModelForCausalLM.from_pretrained(config.sm_model_name, pad_token_id=0)
         tokenizer = AutoTokenizer.from_pretrained(config.sm_model_name)
         self.pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
         self.kb = kb
