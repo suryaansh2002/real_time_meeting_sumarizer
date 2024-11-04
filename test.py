@@ -2,6 +2,7 @@ import requests
 from uuid import uuid4
 import wave
 import io
+from huggingface_hub import login
 
 def stream_audio_file(wav_file_path: str, chunk_size_seconds: float = 1.0):
     session_id = str(uuid4())
@@ -53,4 +54,5 @@ def stream_audio_file(wav_file_path: str, chunk_size_seconds: float = 1.0):
             sequence_number += 1
 
 # Usage
-stream_audio_file("test.wav", chunk_size_seconds=10.0)
+login("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")
+stream_audio_file("test.wav", chunk_size_seconds=200.0)
