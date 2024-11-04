@@ -141,5 +141,6 @@ cython_debug/
 
 #config files
 .gitconfig
+test.wav
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Python
