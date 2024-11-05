@@ -40,17 +40,18 @@ def stream_audio_file(wav_file_path: str, chunk_size_seconds: float = 1.0):
                 'sequence_number': sequence_number,
                 'is_final': str(is_final).lower()
             }
-            
-            # Send request
+
+            # # Send request
             try:
                 response = requests.post(url, files=files, data=data)
-                print(response)
+                print(response.json())
                 print(f"Chunk {sequence_number} - Status: {response.status_code}")
                 if response.status_code != 200:
                     print(f"Error response: {response.text}")
             except Exception as e:
                 print(f"Error sending chunk {sequence_number}: {str(e)}")
-            
+
+            break
             sequence_number += 1
 
 # Usage
