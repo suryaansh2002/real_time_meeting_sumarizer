@@ -1,5 +1,6 @@
 from uuid import UUID
 import logging
+from pydantic import UUID4
 
 from fastapi import APIRouter, Depends, HTTPException, File, Form, UploadFile
 
@@ -18,9 +19,9 @@ router = APIRouter(prefix="/api/v1/audio", tags=["movies"])
 @router.post("/upload", response_model=SummerizationResponse)
 async def stream_diarize_audio(
     audio_file: UploadFile = File(...),
-    session_id: UUID = Form(...),
+    session_id: UUID4 = Form(...),
     sequence_number: int = Form(...),
-    is_final: bool = Form(False),
+    is_final: bool = Form(...),
     service: StreamingDiarizationService = Depends(get_diarization_service),
     sum_service: SummarizationService = Depends(get_summerization_service)
 ) -> SummerizationResponse:
