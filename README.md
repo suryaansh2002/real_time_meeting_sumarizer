@@ -62,5 +62,5 @@ This project is a Chrome extension and FastAPI server that records audio from a 
 
 ## Purpose
 
-This project was built as part of the Final Project for CS5242 Neural Networks and Deep Learning Course at National University of Singapore. AY 2024-25 Semester 1.
+#### This project was built as part of the Final Project for CS5242 Neural Networks and Deep Learning Course at the National University of Singapore. AY 2024-25 Semester 1.
 
