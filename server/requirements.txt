@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+motor
+torch
+transformers
+pyannote.audio
+openai-whisper
+sentencepiece
+bitsandbytes
+Jinja2

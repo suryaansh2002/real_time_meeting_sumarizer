@@ -1,0 +1,17 @@
+{
+  "name": "Meeting Summarizer",
+  "description": "Records the current tab in an offscreen document.",
+  "version": "1",
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "action": {
+    "default_icon": "icons/not-recording.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [ "tabCapture", "offscreen", "tabs", "scripting", "sidePanel", "storage" ],
+  "side_panel": {
+    "default_path": "index.html"
+  }
+}
