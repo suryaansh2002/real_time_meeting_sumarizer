@@ -85,9 +85,6 @@ The project consists of three main components working together:
 
 ### Technical Implementation
 
-#### Speech Processing Pipeline
-![Speech Processing Pipeline](images/pipeline.png)
-
 The system processes audio through multiple stages:
 1. Audio capture and streaming
 2. Speaker diarization
@@ -107,7 +104,6 @@ The extension provides a clean, intuitive interface for:
 - Starting/stopping recording
 - Viewing real-time transcripts
 - Accessing summarized content
-- Interacting with the knowledge base
 
 ### Performance Metrics
 
