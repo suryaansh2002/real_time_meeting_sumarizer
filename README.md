@@ -24,8 +24,8 @@ This project is a Chrome extension and FastAPI server that records audio from a 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/MadhavWalia/project.git
-   cd project
+   git clone https://github.com/suryaansh2002/real_time_meeting_sumarizer.git
+   cd real_time_meeting_sumarizer
    ```
 
 2. **Install server dependencies:**
@@ -111,3 +111,7 @@ The extension provides a clean, intuitive interface for:
 - **Speaker Diarization Accuracy**: ~90%
 - **Average Processing Time**: 1.2 seconds per audio chunk
 - **Memory Usage**: 4GB GPU memory (with optimization)
+
+## License
+
+MIT — see [LICENSE](LICENSE).
